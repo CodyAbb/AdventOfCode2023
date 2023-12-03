@@ -1,11 +1,13 @@
+pub mod tests;
+
 use std::fs;
 
 const FILE_PATH_LOCATION: &str =
     "/Users/codyabbott/Documents/GitHub/AdventOfCode23/day1/src/input-file.txt";
 
-fn generate_line_number(line: &str) -> u32 {
-    let mut left_number = 0;
-    let mut right_number = 0;
+pub fn generate_line_number(line: &str) -> u32 {
+    let mut left_number: u32 = 0;
+    let mut right_number: u32 = 0;
 
     for c in line.chars() {
         if c.is_numeric() {
@@ -26,8 +28,10 @@ fn main() {
 
     let split_lines = file_contents.lines();
 
-    let running_total: u32 = 0;
+    let mut running_total: u32 = 0;
     for line in split_lines {
-        let coordinate = generate_line_number(line);
+        running_total += generate_line_number(line);
     }
+
+    println!("Total: {}", running_total);
 }
