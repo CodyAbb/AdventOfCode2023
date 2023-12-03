@@ -5,6 +5,10 @@ use std::fs;
 const FILE_PATH_LOCATION: &str =
     "/Users/codyabbott/Documents/GitHub/AdventOfCode23/day1/src/input-file.txt";
 
+const NUMBER_STRING_ARRAY: [&'static str; 9] = [
+    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+];
+
 pub fn generate_line_number(line: &str) -> u32 {
     let mut left_number: u32 = 0;
     let mut left_number_populated: bool = false;

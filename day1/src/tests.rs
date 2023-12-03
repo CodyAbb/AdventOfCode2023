@@ -19,4 +19,22 @@ mod tests {
         let response: u32 = generate_line_number("abc");
         assert_eq!(response, 0);
     }
+
+    #[test]
+    fn handles_string_characters() {
+        let response: u32 = generate_line_number("onetwo");
+        assert_eq!(response, 12);
+    }
+
+    #[test]
+    fn handles_multiple_string_characters() {
+        let response: u32 = generate_line_number("onetwoseven");
+        assert_eq!(response, 17);
+    }
+
+    #[test]
+    fn handles_multiple_string_and_digit_characters() {
+        let response: u32 = generate_line_number("acsd9twoseven");
+        assert_eq!(response, 97);
+    }
 }
