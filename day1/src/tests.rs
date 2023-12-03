@@ -13,4 +13,10 @@ mod tests {
         let response: u32 = generate_line_number("a7bc");
         assert_eq!(response, 77);
     }
+
+    #[test]
+    fn handles_no_digit_line() {
+        let response: u32 = generate_line_number("abc");
+        assert_eq!(response, 0);
+    }
 }
