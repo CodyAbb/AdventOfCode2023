@@ -33,6 +33,12 @@ mod tests {
     }
 
     #[test]
+    fn handles_same_characters_multiple_times() {
+        let response: u32 = generate_line_number("oneone");
+        assert_eq!(response, 17);
+    }
+
+    #[test]
     fn handles_multiple_string_and_digit_characters() {
         let response: u32 = generate_line_number("acsd9twoseven");
         assert_eq!(response, 97);
